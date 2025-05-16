@@ -1,7 +1,7 @@
-const express = require('express');
+import express from 'express';
 const app = express();
 const port = process.env.PORT || 3000;
-const fetch = require('node-fetch'); // You'll need to install this: npm install node-fetch
+import fetch from 'node-fetch';
 
 app.use(express.urlencoded({ extended: false })); // To parse URL-encoded bodies
 
