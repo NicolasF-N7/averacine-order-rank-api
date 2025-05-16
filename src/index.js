@@ -1,9 +1,14 @@
 import express from 'express';
+import bodyParser from 'body-parser';
 const app = express();
 const port = process.env.PORT || 3000;
 import fetch from 'node-fetch';
 
 app.use(express.urlencoded({ extended: false })); // To parse URL-encoded bodies
+
+// 🔽 Add this middleware to parse form data
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 app.post('/check-rank', async (req, res) => {
   const { email } = req.body;
